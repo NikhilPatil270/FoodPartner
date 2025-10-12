@@ -1,0 +1,16 @@
+//create server
+const express = require('express');
+const app=express();//server instance is created
+
+const cookieParser=require('cookie-parser');
+const authRoutes=require('./routes/auth.routes');
+
+app.use(express.json());//middleware to parse json data ,basically it bring data into req.body
+app.use(cookieParser());
+
+app.get('/',(req,res)=>{
+    res.send("Hello World");
+});
+app.use('/api/auth',authRoutes)
+
+module.exports=app;
