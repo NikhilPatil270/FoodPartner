@@ -1,16 +1,18 @@
 //create server
-const express = require('express');
-const app=express();//server instance is created
+const express = require("express");
+const app = express(); //server instance is created
 
-const cookieParser=require('cookie-parser');
-const authRoutes=require('./routes/auth.routes');
+const cookieParser = require("cookie-parser");
+const authRoutes = require("./routes/auth.routes");
+const foodRoutes = require("./routes/food.routes");
 
-app.use(express.json());//middleware to parse json data ,basically it bring data into req.body
+app.use(express.json()); //middleware to parse json data ,basically it bring data into req.body
 app.use(cookieParser());
 
-app.get('/',(req,res)=>{
-    res.send("Hello World");
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
-app.use('/api/auth',authRoutes)
+app.use("/api/auth", authRoutes);
+app.use("/api/food", foodRoutes);
 
-module.exports=app;
+module.exports = app;
