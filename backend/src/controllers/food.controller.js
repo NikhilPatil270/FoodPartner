@@ -17,4 +17,9 @@ async function createFood(req, res) {
   res.status(201).send({ message: "Food item created successfully", foodItem });
 }
 
-module.exports = { createFood };
+async function getFoodItems(req, res) {
+  const foodItem=await foodModel.find();
+  res.status(200).send({message:"Food items fetched successfully",foodItem});
+}
+
+module.exports = { createFood,getFoodItems };

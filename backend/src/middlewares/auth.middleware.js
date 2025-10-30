@@ -1,4 +1,5 @@
 const foodPartnerModel = require("../models/foodpartner.model");
+const userModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 
 async function authFoodPartnerMiddleware(req, res, next) {
@@ -20,6 +21,25 @@ async function authFoodPartnerMiddleware(req, res, next) {
   }
 }
 
-module.exports={
-    authFoodPartnerMiddleware,
+async function authUserMiddleware(req, res, next) {
+  const token = req.cookies.token; //get token from cookies
+  if (!token) {
+    return res.status(401).send({ message: "Please login first" });
+  }
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); //verify token
+    const user = await userModel.findById(decoded.id);
+    if (!user) {
+      return res.status(401).send({ message: "User not found" });
+    }
+    req.user = user; //attach user to response object
+    next();
+  } catch {
+    return res.status(401).send({ message: "Invalid token" });
+  }
 }
+
+module.exports = {
+  authFoodPartnerMiddleware,
+  authUserMiddleware,
+};
