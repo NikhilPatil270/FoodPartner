@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/auth.css'
+import '../../styles/auth.css'
 
 const PartnerRegister = ()=>{
   return (
@@ -20,6 +20,11 @@ const PartnerRegister = ()=>{
           </div>
 
           <div className="form-group">
+            <label className="form-label">Contact name</label>
+            <input className="form-input" placeholder="Full name of contact person" />
+          </div>
+
+          <div className="form-group">
             <label className="form-label">Contact email</label>
             <input className="form-input" type="email" placeholder="contact@shop.com" />
           </div>
@@ -27,6 +32,11 @@ const PartnerRegister = ()=>{
           <div className="form-group">
             <label className="form-label">Phone</label>
             <input className="form-input" placeholder="+1 555 555 555" />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label">Business address</label>
+            <input className="form-input" placeholder="Full business address" />
           </div>
 
           <div className="form-group">
