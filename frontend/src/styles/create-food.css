@@ -1,0 +1,121 @@
+@import './variables.css';
+
+.create-food-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.create-food-form {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--padding);
+}
+
+.form-title {
+  font-size: var(--heading-size);
+  margin: 0 0 20px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: var(--label-size);
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  font-size: var(--input-size);
+  padding: 12px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.video-input-container {
+  border: 2px dashed var(--input-border);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.video-input-container:hover {
+  border-color: var(--primary);
+}
+
+.video-preview-container {
+  position: relative;
+  width: 100%;
+}
+
+.video-preview {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: var(--radius);
+}
+
+.remove-video-button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.remove-video-button:hover {
+  opacity: 1;
+}
+
+.submit-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: var(--input-size);
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: opacity 0.2s;
+}
+
+.submit-button:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .create-food-page {
+    padding: 40px;
+  }
+}

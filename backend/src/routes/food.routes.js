@@ -15,6 +15,6 @@ const upload=multer({
 router.post('/',authMiddleware.authFoodPartnerMiddleware,upload.single("video"),foodController.createFood);//pehle auth krwaya fir food create krwaya
 
 /* get /api/food/ [Protected] */
-router.get('/',authMiddleware.authUserMiddleware,foodController.getFoodItems)
+router.get('/',foodController.getFoodItems)//fetch food
 
 module.exports=router;

@@ -37,7 +37,7 @@ const Home = () => {
   }, [videos])
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/food',{withCredentials:true})
+    axios.get('http://localhost:3000/api/food',{withCredentials: true})
     .then(response=>{
       console.log(response.data);
       setVideos(response.data.foodItem);
