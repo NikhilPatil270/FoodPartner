@@ -58,7 +58,7 @@ const CreateFoodPartner = () => {
       withCredentials: true,
     });
     console.log(response.data);
-    navigate('/');
+    navigate('/reels');
   };
 
   return (

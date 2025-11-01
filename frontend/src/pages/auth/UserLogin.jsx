@@ -21,7 +21,7 @@ const UserLogin = () => {
       }
     );
     console.log("User logged in:", response.data);
-    navigate("/");
+    navigate("/reels");
   };
 
   return (

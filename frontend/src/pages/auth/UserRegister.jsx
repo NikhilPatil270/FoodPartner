@@ -21,7 +21,7 @@ const UserRegister = ()=>{
       withCredentials:true//to send cookie from backend to frontend,,token save hojayega cookie me
     })
     console.log("User registered:", response.data);
-    navigate('/');
+    navigate('/reels');
   }
 
   return (
